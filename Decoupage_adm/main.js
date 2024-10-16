@@ -52,7 +52,6 @@ showCommunesButton.addEventListener('click', () => {
         fetch(`https://geo.api.gouv.fr/departements/${departementCode}/communes`)
             .then(response => response.json())
             .then(communes => {
-                // Trier les communes par population
                 communes.sort((a, b) => (b.population || 0) - (a.population || 0));
                 communes.forEach(commune => {
                     const li = document.createElement('li');
